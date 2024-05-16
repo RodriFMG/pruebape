@@ -1,0 +1,13 @@
+ version: "3.3"
+
+ services:
+   MicroService1:
+     build: ssh://eee_W_3107989@54.82.104.5/home/ubuntu/MicroService2
+     image: rmeza1806/micro_service2
+     ports:
+       - 8081:8080
+   MicroService2:
+     build: ssh://eee_W_3107989@34.229.158.104/home/ubuntu/MicroService1
+     image: rmeza1806/micro_service1
+     ports:
+       - 8082:8080
